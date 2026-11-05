@@ -27,7 +27,7 @@ public class SamokatOrderSecondPage {
     private final By commentField = By.xpath("//input[contains(@placeholder, 'Комментарий')]");
     //кнопка Заказать (под формой Про аренду)
     private final By orderButton = By.xpath("//div[contains(@class, 'Order_Buttons')]//button[normalize-space(text())='Заказать']");
-    //кнопка Да (модального окна Хотите оформить заказ?)
+    //кнопка Да (модального окна "Хотите оформить заказ?")
     private final By yesButton = By.xpath("//div[contains(@class, 'Order_Modal')]//button[normalize-space(text())='Да']");
     //модальное окно Заказ оформлен
     private final By orderApproved = By.xpath("//div[contains(@class, 'Order_ModalHeader') and contains(normalize-space(text()), 'Заказ оформлен')]");
@@ -96,7 +96,7 @@ public class SamokatOrderSecondPage {
                     .until(ExpectedConditions.visibilityOfElementLocated(orderApproved))
                     .isDisplayed();
         } catch (TimeoutException e) {
-            System.out.println("Лог: Модальное окно подтверждения заказа не появилось за 10 секунд ожидания");
+            System.out.println("Лог: Модальное окно подтверждения заказа не появилось за 5 секунд ожидания");
             return false;
         }
     }

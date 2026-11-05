@@ -5,32 +5,61 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Sprint_4</artifactId>
+    <artifactId>java-ui-testing-scooter</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Java UI Testing Scooter Project</name>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Versions of Core Dependencies -->
+        <junit.version>4.13.2</junit.version>
+        <selenium.version>4.23.0</selenium.version>
+        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+
+        <!-- Versions of Maven Plugins -->
+        <maven.compiler.version>3.8.1</maven.compiler.version>
     </properties>
 
     <dependencies>
+        <!-- Test Framework -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- UI Automation Framework -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.23.0</version>
+            <version>${selenium.version}</version>
         </dependency>
+
+        <!-- Automated Driver Management -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.9.2</version>
+            <version>${webdrivermanager.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
